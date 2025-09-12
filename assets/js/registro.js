@@ -1,4 +1,9 @@
+// assets/js/registro.js
+
+// --- Funciones de Validación ---
 function validarRun(run) {
+    // Expresión regular mejorada basada en el PDF (8 dígitos + 1 dígito verificador)
+    // Acepta RUN con o sin puntos y guión, y con K mayúscula o minúscula
     const regex = /^(\d{1,2}\.?)(\d{3}\.?)(\d{3})-?([\dkK])$/;
     if (!regex.test(run)) {
         return false;
@@ -8,7 +13,7 @@ function validarRun(run) {
     const rutSinDigito = cleanRun.slice(0, -1);
     const rutDigito = cleanRun.slice(-1).toUpperCase();
 
-    if (rutSinDigito.length < 7) return false; // RUN muy corto
+    if (rutSinDigito.length < 7) return false; // RUN demasiado corto
 
     let suma = 0;
     let mul = 2;
@@ -28,6 +33,7 @@ function validarRun(run) {
 }
 
 function validarCorreo(correo) {
+    // Basado en FAQ 1 y PDF
     return /^[\w.+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i.test(correo);
 }
 
@@ -42,7 +48,7 @@ function esMayorEdad(fechaString) {
     return edad >= 18;
 }
 
-// Lógica Principal del Formulario
+// --- Lógica Principal del Formulario ---
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("formRegistro");
     if (!form) return; // Salir si el formulario no existe en la página
@@ -127,11 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (isValid && mensajeDiv) {
-            // Simulación de Registro Exitoso
+            // --- Simulación de Registro Exitoso ---
             mensajeDiv.className = 'alert alert-success mt-3 text-center';
             mensajeDiv.textContent = `¡Registro exitoso! Bienvenido(a), ${nombre}.`;
 
-            // Mostrar Descuentos según FAQ
+            // --- Mostrar Descuentos según FAQ ---
             if (correo.toLowerCase().endsWith('@duoc.cl') || correo.toLowerCase().endsWith('@profesor.duoc.cl')) {
                 const alertaDuoc = document.createElement('div');
                 alertaDuoc.className = 'alert alert-warning mt-3';
@@ -152,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Actualizar Contador del Carrito
+    // --- Actualizar Contador del Carrito ---
     function actualizarContadorCarrito() {
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
@@ -163,3 +169,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     actualizarContadorCarrito();
 });
+
+// --- Función para limpiar el formulario (Añadida) ---
+function limpiarFormulario() {
+    const form = document.getElementById('formRegistro');
+    if (form) {
+        // Resetea todos los campos del formulario
+        form.reset();
+        
+        // Limpia mensajes de error visuales
+        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+        document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+        
+        // Limpia el mensaje general de éxito/advertencia
+        const mensajeDiv = document.getElementById('mensaje');
+        if (mensajeDiv) {
+            mensajeDiv.innerHTML = '';
+            mensajeDiv.className = 'mt-3';
+        }
+    }
+}
