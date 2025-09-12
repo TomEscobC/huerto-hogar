@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - HuertoHogar</title>
+    <link rel="shortcut icon" href="../../assets/images/logo1.jpg" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Menú de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <i class="bi bi-tree-fill me-2"></i>HuertoHogar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro.html"><i class="bi bi-person-plus"></i> Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="carrito.html">
+                            <i class="bi bi-cart3"></i> Carrito
+                            <span id="contadorCarrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4 flex-grow-1">
+        <!-- Título de la Página -->
+        <section class="my-4 text-center">
+            <h1 class="display-5"><i class="bi bi-envelope-at-fill"></i> Contáctanos</h1>
+            <p class="lead">¿Tienes preguntas o comentarios? Estamos aquí para ayudarte.</p>
+        </section>
+
+        <div class="row g-4">
+            <!-- Información de Contacto -->
+            <div class="col-lg-5">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="mb-0"><i class="bi bi-info-circle"></i> Información de Contacto</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <h5><i class="bi bi-geo-alt text-success"></i> Nuestras Oficinas</h5>
+                                <p class="mb-1">Santiago, Chile</p>
+                                <p class="text-muted small">Operamos en múltiples puntos a lo largo de Chile.</p>
+                            </li>
+                            <li class="mb-3">
+                                <h5><i class="bi bi-telephone text-success"></i> Teléfono</h5>
+                                <p class="mb-1"><a href="tel:+56212345678" class="text-decoration-none">+56 2 1234 5678</a></p>
+                                <p class="text-muted small">Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+                            </li>
+                            <li class="mb-3">
+                                <h5><i class="bi bi-envelope text-success"></i> Correo Electrónico</h5>
+                                <p class="mb-1"><a href="mailto:contacto@huertohogar.cl" class="text-decoration-none">contacto@huertohogar.cl</a></p>
+                                <p class="text-muted small">Respuesta en un plazo de 24-48 horas.</p>
+                            </li>
+                            <li>
+                                <h5><i class="bi bi-chat-dots text-success"></i> Chat en Vivo</h5>
+                                <p class="mb-1">Disponible en la esquina inferior derecha de nuestra web.</p>
+                                <p class="text-muted small">(Simulación: Haz clic en el botón de abajo)</p>
+                                <button id="btnAbrirChat" class="btn btn-outline-success btn-sm">
+                                    <i class="bi bi-chat"></i> Abrir Chat
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Contacto -->
+            <div class="col-lg-7">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="mb-0"><i class="bi bi-pencil-square"></i> Envíanos un Mensaje</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="formContacto">
+                            <div class="mb-3">
+                                <label for="nombreContacto" class="form-label">Nombre Completo *</label>
+                                <input type="text" class="form-control" id="nombreContacto" required>
+                                <div class="invalid-feedback" id="errorNombreContacto"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailContacto" class="form-label">Correo Electrónico *</label>
+                                <input type="email" class="form-control" id="emailContacto" required>
+                                <div class="invalid-feedback" id="errorEmailContacto"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="asuntoContacto" class="form-label">Asunto *</label>
+                                <select class="form-select" id="asuntoContacto" required>
+                                    <option value="" selected disabled>Selecciona un asunto</option>
+                                    <option value="consulta_general">Consulta General</option>
+                                    <option value="problema_pedido">Problema con un Pedido</option>
+                                    <option value="queja_sugerencia">Queja o Sugerencia</option>
+                                    <option value="trabaja_con_nosotros">Trabaja con Nosotros</option>
+                                </select>
+                                <div class="invalid-feedback" id="errorAsuntoContacto"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensajeContacto" class="form-label">Mensaje *</label>
+                                <textarea class="form-control" id="mensajeContacto" rows="5" required></textarea>
+                                <div class="invalid-feedback" id="errorMensajeContacto"></div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="aceptaTerminos">
+                                <label class="form-check-label" for="aceptaTerminos">
+                                    Acepto la <a href="#" class="text-success">política de privacidad</a> *
+                                </label>
+                                <div class="invalid-feedback" id="errorTerminos"></div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Enviar Mensaje</button>
+                            <div id="mensajeRespuesta" class="mt-3"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preguntas Frecuentes (FAQ) - Sección Opcional -->
+        <section class="my-5">
+            <h2 class="mb-4 text-center"><i class="bi bi-question-circle-fill"></i> Preguntas Frecuentes</h2>
+            <div class="accordion" id="accordionFAQ">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Cuáles son los métodos de pago disponibles?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Aceptamos pagos con tarjetas de crédito y débito (Visa, Mastercard), transferencias bancarias y pagos a través de Webpay.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿Cuánto tiempo tarda la entrega?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            El tiempo de entrega varía según tu ubicación. Generalmente, las entregas en Santiago y zonas metropolitanas toman entre 1 y 2 días hábiles. Para otras regiones, puede tomar entre 3 y 5 días hábiles.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ¿Puedo cambiar o devolver un producto?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Sí, puedes cambiar o devolver un producto dentro de las 48 horas posteriores a la recepción del pedido, siempre que el producto esté en perfectas condiciones y con su empaque original. Ponte en contacto con nosotros para iniciar el proceso.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center text-lg-start mt-auto">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            &copy; 2025 HuertoHogar. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para la página de contacto -->
+    <script src="../../assets/js/contacto.js"></script>
+</body>
+</html>
