@@ -1,0 +1,74 @@
+body {
+  background-color: #F7F7F7; /* Blanco Suave */
+  font-family: 'Montserrat', sans-serif;
+  color: #333333; /* Gris Oscuro */
+}
+
+h1, h2, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #8B4513; /* Marrón Claro */
+}
+
+h3 {
+  color: white;
+}
+
+.navbar {
+  background-color: #2E8B57; /* Verde Esmeralda */
+}
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+.banner {
+  background-color: #FFD700; /* Amarillo Mostaza */
+  padding: 15px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.card-title {
+  color: #8B4513; /* Marrón Claro */
+}
+.card-body p:last-child {
+  font-weight: bold;
+  color: #2E8B57; /* Verde Esmeralda */
+}
+
+.btn-success {
+  background-color: #2E8B57; /* Verde Esmeralda */
+  border-color: #2E8B57;
+}
+.btn-success:hover {
+  background-color: #236e44;
+  border-color: #1e5e3a;
+}
+
+.footer {
+  background-color: #8B4513; /* Marrón Claro */
+  color: white;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+.footer a {
+  color: #FFD700; /* Amarillo Mostaza */
+}
+.footer a:hover {
+  color: #FFEC8B;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border-color: #ffeaa7;
+}
+
+.App {
+  text-align: center;
+}
