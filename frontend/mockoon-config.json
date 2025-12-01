@@ -1,0 +1,708 @@
+{
+  "uuid": "huerto-hogar-api",
+  "lastMigration": 29,
+  "name": "Huerto Hogar API",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "localhost",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "get-all-products",
+      "type": "http",
+      "documentation": "Obtiene todos los productos",
+      "method": "get",
+      "endpoint": "products",
+      "responses": [
+        {
+          "uuid": "get-all-products-response",
+          "body": "[\n  {\n    \"id\": \"FR001\",\n    \"name\": \"Manzanas Fuji\",\n    \"description\": \"Crujientes y dulces, cultivadas en el Valle del Maule.\",\n    \"price\": 1200,\n    \"image\": \"/assets/image/manzana-fuji.jpg\",\n    \"category\": \"frutas\",\n    \"stock\": 45\n  },\n  {\n    \"id\": \"VR001\",\n    \"name\": \"Zanahorias Orgánicas\",\n    \"description\": \"Crujientes y ricas en vitamina A, cultivadas sin pesticidas.\",\n    \"price\": 900,\n    \"image\": \"/assets/image/zanahoria-organica.jpg\",\n    \"category\": \"verduras\",\n    \"stock\": 3\n  },\n  {\n    \"id\": \"PO001\",\n    \"name\": \"Miel Orgánica\",\n    \"description\": \"Miel pura producida por apicultores locales.\",\n    \"price\": 5000,\n    \"image\": \"/assets/image/miel-organica.jpeg\",\n    \"category\": \"organicos\",\n    \"stock\": 12\n  },\n  {\n    \"id\": \"PL001\",\n    \"name\": \"Leche Entera\",\n    \"description\": \"Leche fresca de granjas locales responsables.\",\n    \"price\": 1100,\n    \"image\": \"/assets/image/leche-entera.jpeg\",\n    \"category\": \"lacteos\",\n    \"stock\": 2\n  },\n  {\n    \"id\": \"VR002\",\n    \"name\": \"Espinacas Frescas\",\n    \"description\": \"Espinacas orgánicas ricas en hierro y vitaminas.\",\n    \"price\": 1500,\n    \"image\": \"/assets/image/espinaca-fresca.webp\",\n    \"category\": \"verduras\",\n    \"stock\": 28\n  },\n  {\n    \"id\": \"FR002\",\n    \"name\": \"Naranjas de Valencia\",\n    \"description\": \"Naranjas jugosas y ricas en vitamina C.\",\n    \"price\": 800,\n    \"image\": \"/assets/image/naranja-valencia.jpg\",\n    \"category\": \"frutas\",\n    \"stock\": 5\n  },\n  {\n    \"id\": \"PO002\",\n    \"name\": \"Pimentón de Colores\",\n    \"description\": \"Pimentón variado de colores orgánicos.\",\n    \"price\": 2000,\n    \"image\": \"/assets/image/pimenton-colores.jpg\",\n    \"category\": \"organicos\",\n    \"stock\": 18\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,POST,PUT,DELETE,OPTIONS"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Content-Type"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "get-product-by-id",
+      "type": "http",
+      "documentation": "Obtiene un producto por su ID",
+      "method": "get",
+      "endpoint": "products/:id",
+      "responses": [
+        {
+          "uuid": "get-product-fr001",
+          "body": "{\n  \"id\": \"FR001\",\n  \"name\": \"Manzanas Fuji\",\n  \"description\": \"Crujientes y dulces, cultivadas en el Valle del Maule.\",\n  \"price\": 1200,\n  \"image\": \"/assets/image/manzana-fuji.jpg\",\n  \"category\": \"frutas\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "FR001",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "FR001",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "get-product-vr001",
+          "body": "{\n  \"id\": \"VR001\",\n  \"name\": \"Zanahorias Orgánicas\",\n  \"description\": \"Crujientes y ricas en vitamina A, cultivadas sin pesticidas.\",\n  \"price\": 900,\n  \"image\": \"/assets/image/zanahoria-organica.jpg\",\n  \"category\": \"verduras\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "VR001",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "VR001",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "get-product-po001",
+          "body": "{\n  \"id\": \"PO001\",\n  \"name\": \"Miel Orgánica\",\n  \"description\": \"Miel pura producida por apicultores locales.\",\n  \"price\": 5000,\n  \"image\": \"/assets/image/miel-organica.jpeg\",\n  \"category\": \"organicos\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "PO001",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "PO001",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "get-product-pl001",
+          "body": "{\n  \"id\": \"PL001\",\n  \"name\": \"Leche Entera\",\n  \"description\": \"Leche fresca de granjas locales responsables.\",\n  \"price\": 1100,\n  \"image\": \"/assets/image/leche-entera.jpeg\",\n  \"category\": \"lacteos\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "PL001",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "PL001",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "get-product-vr002",
+          "body": "{\n  \"id\": \"VR002\",\n  \"name\": \"Espinacas Frescas\",\n  \"description\": \"Espinacas orgánicas ricas en hierro y vitaminas.\",\n  \"price\": 1500,\n  \"image\": \"/assets/image/espinaca-fresca.webp\",\n  \"category\": \"verduras\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "VR002",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "VR002",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "get-product-fr002",
+          "body": "{\n  \"id\": \"FR002\",\n  \"name\": \"Naranjas de Valencia\",\n  \"description\": \"Naranjas jugosas y ricas en vitamina C.\",\n  \"price\": 800,\n  \"image\": \"/assets/image/naranja-valencia.jpg\",\n  \"category\": \"frutas\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "FR002",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "FR002",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "get-product-po002",
+          "body": "{\n  \"id\": \"PO002\",\n  \"name\": \"Pimentón de Colores\",\n  \"description\": \"Pimentón variado de colores orgánicos.\",\n  \"price\": 2000,\n  \"image\": \"/assets/image/pimenton-colores.jpg\",\n  \"category\": \"organicos\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "PO002",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "PO002",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "get-product-404",
+          "body": "{\n  \"error\": \"Producto no encontrado\",\n  \"message\": \"El producto con el ID especificado no existe\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Not Found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "get-all-users",
+      "type": "http",
+      "documentation": "Obtiene todos los usuarios",
+      "method": "get",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "get-all-users-response",
+          "body": "[\n  {\"id\": 1, \"email\": \"nicole@huerto.cl\", \"password\": \"123456\", \"name\": \"Nicole Pearson\", \"role\": \"Digital Strategist\", \"avatar\": \"https://i.pravatar.cc/150?img=5\", \"isAdmin\": true},\n  {\"id\": 2, \"email\": \"lucas@huerto.cl\", \"password\": \"123456\", \"name\": \"Lucas Martínez\", \"role\": \"Frontend Developer\", \"avatar\": \"https://i.pravatar.cc/150?img=12\", \"isAdmin\": false},\n  {\"id\": 3, \"email\": \"sara@huerto.cl\", \"password\": \"123456\", \"name\": \"Sara Gómez\", \"role\": \"Project Manager\", \"avatar\": \"https://i.pravatar.cc/150?img=45\", \"isAdmin\": true},\n  {\"id\": 4, \"email\": \"daniel@huerto.cl\", \"password\": \"123456\", \"name\": \"Daniel Lee\", \"role\": \"Data Analyst\", \"avatar\": \"https://i.pravatar.cc/150?img=33\", \"isAdmin\": false},\n  {\"id\": 5, \"email\": \"claudia@huerto.cl\", \"password\": \"123456\", \"name\": \"Claudia Rivas\", \"role\": \"Marketing Specialist\", \"avatar\": \"https://i.pravatar.cc/150?img=26\", \"isAdmin\": false},\n  {\"id\": 6, \"email\": \"henry@huerto.cl\", \"password\": \"123456\", \"name\": \"Henry Watson\", \"role\": \"Software Architect\", \"avatar\": \"https://i.pravatar.cc/150?img=17\", \"isAdmin\": true},\n  {\"id\": 7, \"email\": \"maria@huerto.cl\", \"password\": \"123456\", \"name\": \"María Delgado\", \"role\": \"UX Researcher\", \"avatar\": \"https://i.pravatar.cc/150?img=48\", \"isAdmin\": false},\n  {\"id\": 8, \"email\": \"jorge@huerto.cl\", \"password\": \"123456\", \"name\": \"Jorge Silva\", \"role\": \"Backend Developer\", \"avatar\": \"https://i.pravatar.cc/150?img=10\", \"isAdmin\": false},\n  {\"id\": 9, \"email\": \"elena@huerto.cl\", \"password\": \"123456\", \"name\": \"Elena Moretti\", \"role\": \"Graphic Designer\", \"avatar\": \"https://i.pravatar.cc/150?img=27\", \"isAdmin\": false},\n  {\"id\": 10, \"email\": \"tomas@huerto.cl\", \"password\": \"123456\", \"name\": \"Tomás Rivera\", \"role\": \"Cybersecurity Analyst\", \"avatar\": \"https://i.pravatar.cc/150?img=19\", \"isAdmin\": false}\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "post-login",
+      "type": "http",
+      "documentation": "Login de usuario",
+      "method": "post",
+      "endpoint": "login",
+      "responses": [
+        {
+          "uuid": "login-nicole",
+          "body": "{\"success\": true, \"user\": {\"id\": 1, \"email\": \"nicole@huerto.cl\", \"name\": \"Nicole Pearson\", \"role\": \"Digital Strategist\", \"avatar\": \"https://i.pravatar.cc/150?img=5\", \"isAdmin\": true}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Nicole Admin",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "nicole@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-sara",
+          "body": "{\"success\": true, \"user\": {\"id\": 3, \"email\": \"sara@huerto.cl\", \"name\": \"Sara Gómez\", \"role\": \"Project Manager\", \"avatar\": \"https://i.pravatar.cc/150?img=45\", \"isAdmin\": true}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Sara Admin",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "sara@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-henry",
+          "body": "{\"success\": true, \"user\": {\"id\": 6, \"email\": \"henry@huerto.cl\", \"name\": \"Henry Watson\", \"role\": \"Software Architect\", \"avatar\": \"https://i.pravatar.cc/150?img=17\", \"isAdmin\": true}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Henry Admin",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "henry@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-lucas",
+          "body": "{\"success\": true, \"user\": {\"id\": 2, \"email\": \"lucas@huerto.cl\", \"name\": \"Lucas Martínez\", \"role\": \"Frontend Developer\", \"avatar\": \"https://i.pravatar.cc/150?img=12\", \"isAdmin\": false}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Lucas",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "lucas@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-daniel",
+          "body": "{\"success\": true, \"user\": {\"id\": 4, \"email\": \"daniel@huerto.cl\", \"name\": \"Daniel Lee\", \"role\": \"Data Analyst\", \"avatar\": \"https://i.pravatar.cc/150?img=33\", \"isAdmin\": false}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Daniel",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "daniel@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-claudia",
+          "body": "{\"success\": true, \"user\": {\"id\": 5, \"email\": \"claudia@huerto.cl\", \"name\": \"Claudia Rivas\", \"role\": \"Marketing Specialist\", \"avatar\": \"https://i.pravatar.cc/150?img=26\", \"isAdmin\": false}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Claudia",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "claudia@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-maria",
+          "body": "{\"success\": true, \"user\": {\"id\": 7, \"email\": \"maria@huerto.cl\", \"name\": \"María Delgado\", \"role\": \"UX Researcher\", \"avatar\": \"https://i.pravatar.cc/150?img=48\", \"isAdmin\": false}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Maria",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "maria@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-jorge",
+          "body": "{\"success\": true, \"user\": {\"id\": 8, \"email\": \"jorge@huerto.cl\", \"name\": \"Jorge Silva\", \"role\": \"Backend Developer\", \"avatar\": \"https://i.pravatar.cc/150?img=10\", \"isAdmin\": false}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Jorge",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "jorge@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-elena",
+          "body": "{\"success\": true, \"user\": {\"id\": 9, \"email\": \"elena@huerto.cl\", \"name\": \"Elena Moretti\", \"role\": \"Graphic Designer\", \"avatar\": \"https://i.pravatar.cc/150?img=27\", \"isAdmin\": false}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Elena",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "elena@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-tomas",
+          "body": "{\"success\": true, \"user\": {\"id\": 10, \"email\": \"tomas@huerto.cl\", \"name\": \"Tomás Rivera\", \"role\": \"Cybersecurity Analyst\", \"avatar\": \"https://i.pravatar.cc/150?img=19\", \"isAdmin\": false}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Tomas",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [{"target": "body", "modifier": "email", "value": "tomas@huerto.cl", "invert": false, "operator": "equals"}],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "login-error",
+          "body": "{\"success\": false, \"message\": \"Email o contraseña incorrectos\"}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "Error",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "get-reviews",
+      "type": "http",
+      "documentation": "Obtiene todas las reseñas o por producto",
+      "method": "get",
+      "endpoint": "reviews",
+      "responses": [
+        {
+          "uuid": "get-all-reviews-response",
+          "body": "[\n  {\"id\": 1, \"productId\": \"FR001\", \"userId\": 2, \"userName\": \"Lucas Martínez\", \"userAvatar\": \"https://i.pravatar.cc/150?img=12\", \"rating\": 5, \"comment\": \"Excelentes manzanas, muy frescas y dulces. Las mejores que he probado.\", \"date\": \"2024-11-28\"},\n  {\"id\": 2, \"productId\": \"FR001\", \"userId\": 5, \"userName\": \"Claudia Rivas\", \"userAvatar\": \"https://i.pravatar.cc/150?img=26\", \"rating\": 4, \"comment\": \"Muy buenas, aunque algunas venían un poco maduras.\", \"date\": \"2024-11-25\"},\n  {\"id\": 3, \"productId\": \"VR001\", \"userId\": 7, \"userName\": \"María Delgado\", \"userAvatar\": \"https://i.pravatar.cc/150?img=48\", \"rating\": 5, \"comment\": \"Zanahorias orgánicas de verdad, se nota la diferencia.\", \"date\": \"2024-11-20\"},\n  {\"id\": 4, \"productId\": \"PO001\", \"userId\": 4, \"userName\": \"Daniel Lee\", \"userAvatar\": \"https://i.pravatar.cc/150?img=33\", \"rating\": 5, \"comment\": \"La mejor miel que he comprado. 100% recomendada.\", \"date\": \"2024-11-18\"},\n  {\"id\": 5, \"productId\": \"PL001\", \"userId\": 8, \"userName\": \"Jorge Silva\", \"userAvatar\": \"https://i.pravatar.cc/150?img=10\", \"rating\": 4, \"comment\": \"Leche fresca y de buen sabor. Muy recomendable.\", \"date\": \"2024-11-15\"},\n  {\"id\": 6, \"productId\": \"VR002\", \"userId\": 9, \"userName\": \"Elena Moretti\", \"userAvatar\": \"https://i.pravatar.cc/150?img=27\", \"rating\": 5, \"comment\": \"Espinacas frescas y crujientes. Perfectas para ensaladas.\", \"date\": \"2024-11-12\"},\n  {\"id\": 7, \"productId\": \"FR002\", \"userId\": 10, \"userName\": \"Tomás Rivera\", \"userAvatar\": \"https://i.pravatar.cc/150?img=19\", \"rating\": 4, \"comment\": \"Naranjas jugosas, ideales para jugo natural.\", \"date\": \"2024-11-10\"},\n  {\"id\": 8, \"productId\": \"PO002\", \"userId\": 2, \"userName\": \"Lucas Martínez\", \"userAvatar\": \"https://i.pravatar.cc/150?img=12\", \"rating\": 5, \"comment\": \"Pimentones de colores hermosos y muy frescos.\", \"date\": \"2024-11-08\"}\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "All Reviews",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "post-review",
+      "type": "http",
+      "documentation": "Crear una nueva reseña",
+      "method": "post",
+      "endpoint": "reviews",
+      "responses": [
+        {
+          "uuid": "post-review-response",
+          "body": "{\"success\": true, \"message\": \"Reseña agregada exitosamente\", \"review\": {\"id\": 9, \"productId\": \"{{body 'productId'}}\", \"rating\": \"{{body 'rating'}}\", \"comment\": \"{{body 'comment'}}\", \"date\": \"2024-12-01\"}}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Review Created",
+          "headers": [{"key": "Content-Type", "value": "application/json"}, {"key": "Access-Control-Allow-Origin", "value": "*"}],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "get-all-products"
+    },
+    {
+      "type": "route",
+      "uuid": "get-product-by-id"
+    },
+    {
+      "type": "route",
+      "uuid": "get-all-users"
+    },
+    {
+      "type": "route",
+      "uuid": "post-login"
+    },
+    {
+      "type": "route",
+      "uuid": "get-reviews"
+    },
+    {
+      "type": "route",
+      "uuid": "post-review"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type,Authorization"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}

@@ -1,0 +1,323 @@
+/* Estilos personalizados para el Dashboard Admin */
+
+/* Layout principal */
+.admin-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #343a40;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.admin-sidebar .brand-link {
+  display: block;
+  padding: 0.8125rem 0.5rem;
+  transition: width 0.3s ease-in-out;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid #4b545c;
+}
+
+.admin-sidebar .brand-text {
+  color: #fff;
+  font-weight: 500;
+}
+
+.admin-sidebar .nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.admin-sidebar .nav-item {
+  margin: 0;
+}
+
+.admin-sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #c2c7d0;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.admin-sidebar .nav-link:hover {
+  background-color: #495057;
+  color: #fff;
+}
+
+.admin-sidebar .nav-link.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.admin-sidebar .nav-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Navbar superior */
+.admin-navbar {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  height: 57px;
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  transition: left 0.3s ease-in-out;
+}
+
+.admin-navbar .navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.admin-navbar .nav-item {
+  margin-left: 1rem;
+}
+
+.admin-navbar .nav-link {
+  color: #495057;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+
+.admin-navbar .nav-link:hover {
+  color: #007bff;
+}
+
+/* Content wrapper */
+.admin-content-wrapper {
+  margin-left: 250px;
+  margin-top: 57px;
+  padding: 1rem;
+  min-height: calc(100vh - 57px);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Footer */
+.admin-footer {
+  margin-left: 250px;
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Cards estilo AdminLTE */
+.admin-card {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+
+.admin-card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.75rem 1.25rem;
+  background-color: transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.admin-card-body {
+  padding: 1.25rem;
+}
+
+/* Small Box (KPI Cards) */
+.small-box {
+  border-radius: 0.25rem;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.small-box > .inner {
+  padding: 10px;
+}
+
+.small-box h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.small-box p {
+  font-size: 1rem;
+}
+
+.small-box .icon {
+  color: rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+
+.small-box .icon > i {
+  font-size: 90px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  transition: transform 0.3s linear;
+}
+
+.small-box:hover .icon > i {
+  transform: scale(1.1);
+}
+
+.small-box-footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  padding: 3px 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.small-box-footer:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+/* Colores para los KPIs */
+.bg-info {
+  background-color: #17a2b8 !important;
+  color: #fff !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+  color: #fff !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+/* Breadcrumbs */
+.admin-breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+/* Tablas */
+.admin-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.admin-table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Imagen de producto en tabla */
+.product-image-sm {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.product-image-lg {
+  max-width: 300px;
+  height: auto;
+  border-radius: 0.25rem;
+}
+
+/* Badges */
+.badge-category {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    margin-left: -250px;
+  }
+
+  .admin-navbar,
+  .admin-content-wrapper,
+  .admin-footer {
+    margin-left: 0;
+  }
+
+  .admin-navbar {
+    left: 0;
+  }
+}
+
+/* Botón toggle sidebar en móvil */
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #495057;
+}
+
+.sidebar-toggle:hover {
+  color: #007bff;
+}
+
+/* Info Box - Para información adicional */
+.info-box {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}

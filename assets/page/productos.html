@@ -1,0 +1,113 @@
+<!-- assets/page/productos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - HuertoHogar</title>
+    <link rel="shortcut icon" href="../../assets/images/logo1.jpg" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Menú de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <i class="bi bi-tree-fill me-2"></i>HuertoHogar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro.html"><i class="bi bi-person-plus"></i> Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="carrito.html">
+                            <i class="bi bi-cart3"></i> Carrito
+                            <span id="contadorCarrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4 flex-grow-1">
+        <!-- Título de la Página -->
+        <section class="my-4">
+            <h1 class="text-center mb-4">Nuestro Catálogo de Productos</h1>
+            <p class="text-center lead">Descubre la frescura y calidad del campo directamente en tu hogar.</p>
+        </section>
+
+        <!-- Filtros -->
+        <section class="my-4">
+            <div class="row align-items-end">
+                <div class="col-md-4 mb-3">
+                    <label for="filtroCategoria" class="form-label">Filtrar por Categoría:</label>
+                    <select class="form-select" id="filtroCategoria">
+                        <option value="todos" selected>Todos los Productos</option>
+                        <option value="frutas">Frutas Frescas</option>
+                        <option value="verduras">Verduras Orgánicas</option>
+                        <option value="organicos">Productos Orgánicos</option>
+                        <option value="lacteos">Productos Lácteos</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="busquedaProducto" class="form-label">Buscar Producto:</label>
+                    <input type="text" class="form-control" id="busquedaProducto" placeholder="Ej: Manzana, Miel...">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button id="btnLimpiarFiltros" class="btn btn-outline-secondary w-100">Limpiar Filtros</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenedor de Productos -->
+        <section class="my-4">
+            <div class="row" id="contenedorProductos">
+                <!-- Los productos se cargan aquí dinámicamente -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center text-lg-start mt-auto">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            &copy; 2025 HuertoHogar. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para la página de productos -->
+    <script src="../../assets/js/productos.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+COMANDOS ÚTILES - Proyecto Huerto Hogar Admin
+
+# Desarrollo
+cd huerto-hogar-main/frontend
+npm start                          # Iniciar servidor desarrollo
+
+# Compilación
+npm run build                      # Compilar para producción
+
+# Verificar estructura
+tree src/admin                     # Ver estructura carpetas admin
+
+# Claude CLI
+claude chat                        # Iniciar chat interactivo
+claude "comando"                   # Ejecutar comando directo
+
+# Testing API Mockoon
+curl http://localhost:3001/api/products              # Todos los productos
+curl http://localhost:3001/api/products/FR001        # Producto específico
+
+# Git (para entregar)
+git add .
+git commit -m "feat: dashboard admin con AdminLTE"
+git log --oneline                  # Ver commits
+
+# NPM útiles
+npm list axios                     # Ver versión axios
+npm outdated                       # Ver paquetes desactualizados
+npm run build -- --stats           # Build con estadísticas
+
+# Debug
+npm start 2>&1 | tee debug.log    # Guardar logs en archivo
+
+# URLs importantes
+# Tienda: http://localhost:3000
+# Admin: http://localhost:3000/admin
+# Admin Productos: http://localhost:3000/admin/products
+# Mockoon: http://localhost:3001/api/products
