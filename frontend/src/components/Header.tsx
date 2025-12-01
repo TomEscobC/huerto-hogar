@@ -48,8 +48,8 @@ const Header: React.FC = () => {
               <Nav.Link>Contacto</Nav.Link>
             </LinkContainer>
             {/* Enlace Admin - solo visible para usuarios admin */}
-            {isAuthenticated && isAdmin && (
-              <LinkContainer to="/admin">
+            {isAuthenticated && isAdmin && user && (
+              <LinkContainer to={`/admin/user/${user.id}`}>
                 <Nav.Link className="text-warning">
                   <i className="bi bi-gear-fill me-1"></i>Admin
                 </Nav.Link>
@@ -78,8 +78,8 @@ const Header: React.FC = () => {
                     <small className="text-muted">{user?.role}</small>
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  {isAdmin && (
-                    <LinkContainer to="/admin">
+                  {isAdmin && user && (
+                    <LinkContainer to={`/admin/user/${user.id}`}>
                       <NavDropdown.Item>
                         <i className="bi bi-gear me-2"></i>Panel Admin
                       </NavDropdown.Item>

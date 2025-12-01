@@ -8,7 +8,8 @@ import { Product } from '../../types/product';
  * Muestra toda la información de un producto específico
  */
 const ProductDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id, userId } = useParams<{ id: string; userId: string }>();
+  const basePath = `/admin/user/${userId}`;
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -64,10 +65,10 @@ const ProductDetail: React.FC = () => {
       <nav aria-label="breadcrumb" className="mb-3">
         <ol className="breadcrumb admin-breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/admin">Dashboard</Link>
+            <Link to={basePath}>Dashboard</Link>
           </li>
           <li className="breadcrumb-item">
-            <Link to="/admin/products">Productos</Link>
+            <Link to={`${basePath}/products`}>Productos</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
             {product ? product.id : id}
@@ -85,7 +86,7 @@ const ProductDetail: React.FC = () => {
             </div>
             <div>
               <Link
-                to="/admin/products"
+                to={`${basePath}/products`}
                 className="btn btn-outline-secondary"
               >
                 <i className="bi bi-arrow-left me-2"></i>
@@ -128,7 +129,7 @@ const ProductDetail: React.FC = () => {
                     Reintentar
                   </button>
                   <Link
-                    to="/admin/products"
+                    to={`${basePath}/products`}
                     className="btn btn-outline-secondary"
                   >
                     <i className="bi bi-arrow-left me-1"></i>
@@ -227,7 +228,7 @@ const ProductDetail: React.FC = () => {
                     <h5 className="mb-3">Acciones:</h5>
                     <div className="btn-group" role="group">
                       <Link
-                        to="/admin/products"
+                        to={`${basePath}/products`}
                         className="btn btn-secondary"
                       >
                         <i className="bi bi-arrow-left me-2"></i>

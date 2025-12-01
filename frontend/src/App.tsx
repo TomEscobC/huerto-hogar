@@ -26,7 +26,7 @@ function App() {
       <Router>
         <Routes>
         {/* Rutas del Admin - Sin Header/Footer de la tienda */}
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route path="/admin/user/:userId" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="products" element={<AdminProductList />} />
           <Route path="products/:id" element={<AdminProductDetail />} />

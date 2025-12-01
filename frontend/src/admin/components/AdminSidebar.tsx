@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 /**
  * Componente AdminSidebar - Barra lateral del dashboard
@@ -7,6 +7,10 @@ import { Link, useLocation } from 'react-router-dom';
  */
 const AdminSidebar: React.FC = () => {
   const location = useLocation();
+  const { userId } = useParams<{ userId: string }>();
+
+  // Base path para las rutas del admin
+  const basePath = `/admin/user/${userId}`;
 
   // Función para determinar si un enlace está activo
   const isActive = (path: string): boolean => {
@@ -16,7 +20,7 @@ const AdminSidebar: React.FC = () => {
   return (
     <aside className="admin-sidebar">
       {/* Brand */}
-      <Link to="/admin" className="brand-link">
+      <Link to={basePath} className="brand-link">
         <span className="brand-text">Huerto Hogar Admin</span>
       </Link>
 
@@ -26,8 +30,8 @@ const AdminSidebar: React.FC = () => {
           {/* Dashboard */}
           <li className="nav-item">
             <Link
-              to="/admin"
-              className={`nav-link ${isActive('/admin') ? 'active' : ''}`}
+              to={basePath}
+              className={`nav-link ${isActive(basePath) ? 'active' : ''}`}
             >
               <i className="bi bi-speedometer2 nav-icon"></i>
               <span>Dashboard</span>
@@ -37,8 +41,8 @@ const AdminSidebar: React.FC = () => {
           {/* Productos */}
           <li className="nav-item">
             <Link
-              to="/admin/products"
-              className={`nav-link ${isActive('/admin/products') ? 'active' : ''}`}
+              to={`${basePath}/products`}
+              className={`nav-link ${isActive(`${basePath}/products`) ? 'active' : ''}`}
             >
               <i className="bi bi-box-seam nav-icon"></i>
               <span>Productos</span>

@@ -63,7 +63,7 @@
       "responses": [
         {
           "uuid": "get-product-fr001",
-          "body": "{\n  \"id\": \"FR001\",\n  \"name\": \"Manzanas Fuji\",\n  \"description\": \"Crujientes y dulces, cultivadas en el Valle del Maule.\",\n  \"price\": 1200,\n  \"image\": \"/assets/image/manzana-fuji.jpg\",\n  \"category\": \"frutas\"\n}",
+          "body": "{\n  \"id\": \"FR001\",\n  \"name\": \"Manzanas Fuji\",\n  \"description\": \"Crujientes y dulces, cultivadas en el Valle del Maule.\",\n  \"price\": 1200,\n  \"image\": \"/assets/image/manzana-fuji.jpg\",\n  \"category\": \"frutas\",\n  \"stock\": 45\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "FR001",
@@ -98,7 +98,7 @@
         },
         {
           "uuid": "get-product-vr001",
-          "body": "{\n  \"id\": \"VR001\",\n  \"name\": \"Zanahorias Orgánicas\",\n  \"description\": \"Crujientes y ricas en vitamina A, cultivadas sin pesticidas.\",\n  \"price\": 900,\n  \"image\": \"/assets/image/zanahoria-organica.jpg\",\n  \"category\": \"verduras\"\n}",
+          "body": "{\n  \"id\": \"VR001\",\n  \"name\": \"Zanahorias Orgánicas\",\n  \"description\": \"Crujientes y ricas en vitamina A, cultivadas sin pesticidas.\",\n  \"price\": 900,\n  \"image\": \"/assets/image/zanahoria-organica.jpg\",\n  \"category\": \"verduras\",\n  \"stock\": 3\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "VR001",
@@ -133,7 +133,7 @@
         },
         {
           "uuid": "get-product-po001",
-          "body": "{\n  \"id\": \"PO001\",\n  \"name\": \"Miel Orgánica\",\n  \"description\": \"Miel pura producida por apicultores locales.\",\n  \"price\": 5000,\n  \"image\": \"/assets/image/miel-organica.jpeg\",\n  \"category\": \"organicos\"\n}",
+          "body": "{\n  \"id\": \"PO001\",\n  \"name\": \"Miel Orgánica\",\n  \"description\": \"Miel pura producida por apicultores locales.\",\n  \"price\": 5000,\n  \"image\": \"/assets/image/miel-organica.jpeg\",\n  \"category\": \"organicos\",\n  \"stock\": 12\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "PO001",
@@ -168,7 +168,7 @@
         },
         {
           "uuid": "get-product-pl001",
-          "body": "{\n  \"id\": \"PL001\",\n  \"name\": \"Leche Entera\",\n  \"description\": \"Leche fresca de granjas locales responsables.\",\n  \"price\": 1100,\n  \"image\": \"/assets/image/leche-entera.jpeg\",\n  \"category\": \"lacteos\"\n}",
+          "body": "{\n  \"id\": \"PL001\",\n  \"name\": \"Leche Entera\",\n  \"description\": \"Leche fresca de granjas locales responsables.\",\n  \"price\": 1100,\n  \"image\": \"/assets/image/leche-entera.jpeg\",\n  \"category\": \"lacteos\",\n  \"stock\": 2\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "PL001",
@@ -203,7 +203,7 @@
         },
         {
           "uuid": "get-product-vr002",
-          "body": "{\n  \"id\": \"VR002\",\n  \"name\": \"Espinacas Frescas\",\n  \"description\": \"Espinacas orgánicas ricas en hierro y vitaminas.\",\n  \"price\": 1500,\n  \"image\": \"/assets/image/espinaca-fresca.webp\",\n  \"category\": \"verduras\"\n}",
+          "body": "{\n  \"id\": \"VR002\",\n  \"name\": \"Espinacas Frescas\",\n  \"description\": \"Espinacas orgánicas ricas en hierro y vitaminas.\",\n  \"price\": 1500,\n  \"image\": \"/assets/image/espinaca-fresca.webp\",\n  \"category\": \"verduras\",\n  \"stock\": 28\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "VR002",
@@ -238,7 +238,7 @@
         },
         {
           "uuid": "get-product-fr002",
-          "body": "{\n  \"id\": \"FR002\",\n  \"name\": \"Naranjas de Valencia\",\n  \"description\": \"Naranjas jugosas y ricas en vitamina C.\",\n  \"price\": 800,\n  \"image\": \"/assets/image/naranja-valencia.jpg\",\n  \"category\": \"frutas\"\n}",
+          "body": "{\n  \"id\": \"FR002\",\n  \"name\": \"Naranjas de Valencia\",\n  \"description\": \"Naranjas jugosas y ricas en vitamina C.\",\n  \"price\": 800,\n  \"image\": \"/assets/image/naranja-valencia.jpg\",\n  \"category\": \"frutas\",\n  \"stock\": 5\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "FR002",
@@ -273,7 +273,7 @@
         },
         {
           "uuid": "get-product-po002",
-          "body": "{\n  \"id\": \"PO002\",\n  \"name\": \"Pimentón de Colores\",\n  \"description\": \"Pimentón variado de colores orgánicos.\",\n  \"price\": 2000,\n  \"image\": \"/assets/image/pimenton-colores.jpg\",\n  \"category\": \"organicos\"\n}",
+          "body": "{\n  \"id\": \"PO002\",\n  \"name\": \"Pimentón de Colores\",\n  \"description\": \"Pimentón variado de colores orgánicos.\",\n  \"price\": 2000,\n  \"image\": \"/assets/image/pimenton-colores.jpg\",\n  \"category\": \"organicos\",\n  \"stock\": 18\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "PO002",

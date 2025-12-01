@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getProducts } from '../../services/productService';
 import { Product } from '../../types/product';
 
@@ -14,6 +14,9 @@ const ProductList: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
   const [searchTerm, setSearchTerm] = useState<string>('');
+
+  const { userId } = useParams<{ userId: string }>();
+  const basePath = `/admin/user/${userId}`;
 
   // Cargar productos al montar el componente
   useEffect(() => {
@@ -77,7 +80,7 @@ const ProductList: React.FC = () => {
       <nav aria-label="breadcrumb" className="mb-3">
         <ol className="breadcrumb admin-breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/admin">Dashboard</Link>
+            <Link to={basePath}>Dashboard</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
             Productos
@@ -244,7 +247,7 @@ const ProductList: React.FC = () => {
                             <td>
                               <div className="btn-group" role="group">
                                 <Link
-                                  to={`/admin/products/${product.id}`}
+                                  to={`${basePath}/products/${product.id}`}
                                   className="btn btn-sm btn-primary"
                                   title="Ver detalles"
                                 >

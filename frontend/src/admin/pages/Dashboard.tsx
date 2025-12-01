@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getProducts } from '../../services/productService';
 import { getUsers } from '../../services/userService';
 import { getReviews } from '../../services/reviewService';
@@ -19,6 +19,8 @@ const Dashboard: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const { user } = useAuth();
+  const { userId } = useParams<{ userId: string }>();
+  const basePath = `/admin/user/${userId}`;
 
   // Cargar datos al montar el componente
   useEffect(() => {
@@ -84,7 +86,7 @@ const Dashboard: React.FC = () => {
             <div className="icon">
               <i className="bi bi-box-seam"></i>
             </div>
-            <Link to="/admin/products" className="small-box-footer">
+            <Link to={`${basePath}/products`} className="small-box-footer">
               Ver todos <i className="bi bi-arrow-right-circle ms-1"></i>
             </Link>
           </div>
@@ -100,7 +102,7 @@ const Dashboard: React.FC = () => {
             <div className="icon">
               <i className="bi bi-tag"></i>
             </div>
-            <Link to="/admin/products" className="small-box-footer">
+            <Link to={`${basePath}/products`} className="small-box-footer">
               Ver productos <i className="bi bi-arrow-right-circle ms-1"></i>
             </Link>
           </div>
@@ -116,7 +118,7 @@ const Dashboard: React.FC = () => {
             <div className="icon">
               <i className="bi bi-currency-dollar"></i>
             </div>
-            <Link to="/admin/products" className="small-box-footer">
+            <Link to={`${basePath}/products`} className="small-box-footer">
               Ver detalles <i className="bi bi-arrow-right-circle ms-1"></i>
             </Link>
           </div>
@@ -151,7 +153,7 @@ const Dashboard: React.FC = () => {
             <div className="icon">
               <i className="bi bi-exclamation-triangle"></i>
             </div>
-            <Link to="/admin/products" className="small-box-footer">
+            <Link to={`${basePath}/products`} className="small-box-footer">
               {lowStockProducts > 0 ? 'Ver productos' : 'Todo en orden'} <i className="bi bi-arrow-right-circle ms-1"></i>
             </Link>
           </div>
@@ -234,7 +236,7 @@ const Dashboard: React.FC = () => {
                             </td>
                             <td>
                               <Link
-                                to={`/admin/products/${product.id}`}
+                                to={`${basePath}/products/${product.id}`}
                                 className="btn btn-sm btn-primary"
                               >
                                 <i className="bi bi-eye me-1"></i>
@@ -257,7 +259,7 @@ const Dashboard: React.FC = () => {
             </div>
             {!loading && !error && products.length > 5 && (
               <div className="card-footer text-center">
-                <Link to="/admin/products" className="btn btn-primary">
+                <Link to={`${basePath}/products`} className="btn btn-primary">
                   Ver Todos los Productos
                 </Link>
               </div>
